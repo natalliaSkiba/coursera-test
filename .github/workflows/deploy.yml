@@ -18,6 +18,11 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install dependencies
+        run: |
+          cd ./mod1_solution
+          npm install
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
