@@ -18,19 +18,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build and deploy mod1_solution
+      # Prepare directories for deployment
+      - name: Prepare directories for deployment
         run: |
           mkdir -p public/mod1_solution
-          cp -r mod1_solution/* public/mod1_solution
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-
-      - name: Build and deploy mod2_solution
-        run: |
           mkdir -p public/mod2_solution
+          cp -r mod1_solution/* public/mod1_solution
           cp -r mod2_solution/* public/mod2_solution
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
