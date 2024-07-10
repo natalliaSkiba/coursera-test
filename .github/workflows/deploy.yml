@@ -19,8 +19,15 @@ jobs:
           node-version: '20'
 
       
-      - name: Deploy to GitHub Pages
+      - name: Deploy mod1_solution to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./mod1_solution
+          
+
+      - name: Deploy mod2_solution to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./mod2_solution
